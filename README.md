@@ -12,23 +12,14 @@ Footprinting / Network Scanning / Gain Access / Password cracking
 
 ## Project detail
 
-|Project Type | Pentesting & Vulnerability Assessment |
-|Client Name  | Mediroza General Hospital             |
-|Target       | Https:/Medirozahospital.com           |
+|Project Type | Pentesting & Vulnerability Assessment                                                                                                             |
+| ------------| -------------------------
+|Client Name  | Mediroza General Hospital                                                                                                                         |
+|Target       | Https:/Medirozahospital.com                                                                                                                       |
 |Scope        | Full black box penetration test. Identify & exploit vulnerabilities to demonstrate real impact and document all findings in a professional report |
-|Rules        |Testing limited to the target domain only. No social engineering. No denial of service. No testing outside agreed scope |
-|Authorization|The client has provided written authorisation to conduct security testing on their web infrastructure |
-
-
-## Phases covered 
-
-### Phase 1: Reconnaissance & Footprinting
-
-### Phase 2: Scanning & Network Discovery 
-
-### Phase 3: Gaining Access 
-
-### Phase 4: Password Cracking 
+|             |                                                                                                                                                   | 
+|Rules        |Testing limited to the target domain only. No social engineering. No denial of service. No testing outside agreed scope                            |
+|Authorization|The client has provided written authorisation to conduct security testing on their web infrastructure                                              |
 
 
 ## Liability Disclaimer 
@@ -41,6 +32,17 @@ This report covers footprinting the medirozahospital domain using nmap Kali Linu
 
 All commands were run in Kali Linux (footprinting) and on a Windows PC with Zenmap installed (scanning).I have also used Maltego for emails extraction from the domain. Every step below includes the exact command used, the result I observed, a screenshot as evidence, and a short note on why the finding matters from an attacker's point of view.
 
+## Phases covered 
+
+### Phase 1: Reconnaissance & Footprinting
+
+### Phase 2: Scanning & Network Discovery 
+
+### Phase 3: Gaining Access 
+
+### Phase 4: Password Cracking 
+
+
 ## Tools Used
 
 The table below lists each tool used in this report and its purpose. 
@@ -48,7 +50,8 @@ The table below lists each tool used in this report and its purpose.
 |Tool                   | Purpose                                                       |
 |-------------          | ------------------                                            |
 |Kali Linux & Windows OS| used for reconnaissance activities                            |
-|WHOIS                  | Find domain registration details (owner, dates, name servers) |  |whatweb                |Fingerprint web technologies (server, CMS, plugins, IP)        |
+|WHOIS                  | Find domain registration details (owner, dates, name servers) |  
+|whatweb                |Fingerprint web technologies (server, CMS, plugins, IP)        |
 |nslookup               |Resolve the domain name to its IP address using DNS. curl      | 
 |wafw00f                |Detect whether a Web Application Firewall protects the site    |
 |dnsrecon               |Enumerate all DNS records (NS, MX, SPF, TXT, SRV)              |
@@ -58,19 +61,21 @@ The table below lists each tool used in this report and its purpose.
 
 ## Activities Performed
 
-1. Footprinting & Reconnaissance I performed reconnaissance against https:/medirozahospital.com domain using six Kali Linux tools: WHOIS, WhatWeb, Nslookup, Curl, Wafw00f and DNSRecon. Each tool was used to collect a different type of information about the target.
+1. Footprinting & Reconnaissance I performed reconnaissance against # https:/medirozahospital.com domain using six Kali Linux tools: WHOIS, WhatWeb, Nslookup, Curl, Wafw00f and DNSRecon. Each tool was used to collect a different type of information about the target.
 
-First, I used WHOIS to obtain publicly available domain registration information and identify the domain’s name servers. The results provided information about the domain registration and hosting infrastructure.
+### WHOIS:
+to obtain publicly available domain registration information and identify the domain’s name servers. The results provided information about the domain registration and hosting infrastructure.
 
-I then used WhatWeb to identify technologies used by the website. The results identified WordPress 7.0.4 and WP Download Manager 3.3.58, along with other information exposed by the website.
+### WhatWeb: 
+to identify technologies used by the website. The results identified the domain is hosted using a light speed server, along with other information exposed by the website.
 
-Using Nslookup, I resolved the domain name to its IP address. The provided result identified 192.232.216.135.
+### nslookup:
+I resolved the domain name to its IP address. The provided result identified 199.188.201.16
 
-I used Curl with the -I option to inspect the HTTP response headers. This provided additional information about the web application and exposed the WordPress REST API endpoint /wp-json/.
+### wafw00f: 
+to determine whether a Web Application Firewall was protecting the website. The result Lite speed (Litespeed Technology)
 
-Next, I used Wafw00f to determine whether a Web Application Firewall was protecting the website. The result identified ModSecurity (SpiderLabs).
-
-Finally, I used DNSRecon to enumerate DNS records. The results provided information relating to name servers, mail servers, SPF/TXT records, service records and DNS software information.
+I used DNSRecon to enumerate DNS records. The results provided information relating to name servers, mail servers, SPF/TXT records, service records and DNS software information.
 
 Network Scanning with Zenmap For the second activity, I used Zenmap to perform network discovery on medirozahospital.com. In scanning, I used Zenmap and selected intense scan and
 
@@ -78,7 +83,9 @@ The example results provided in the practical identified one live host:
 
 199.188.201.16
 
-Risk Analysis / Impact Based on the information collected during the footprinting and network scanning activities, I identified the following potential risks.
+## Risk Analysis / Impact
+
+Based on the information collected during the footprinting and network scanning activities, I identified the following potential risks.
 
 Footprinting and Scanning
 
