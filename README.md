@@ -73,15 +73,21 @@ to identify technologies used by the website. The results identified the domain 
 I resolved the domain name to its IP address. The provided result identified 199.188.201.16
 
 ### wafw00f: 
-to determine whether a Web Application Firewall was protecting the website. The result Lite speed (Litespeed Technology)
+to determine whether a Web Application Firewall was protecting the website. The result  showed that the site sits behind Lite speed (Litespeed Technology)
 
 I used DNSRecon to enumerate DNS records. The results provided information relating to name servers, mail servers, SPF/TXT records, service records and DNS software information.
 
-Network Scanning with Zenmap For the second activity, I used Zenmap to perform network discovery on medirozahospital.com. In scanning, I used Zenmap and selected intense scan and
-
-The example results provided in the practical identified one live host:
+Network Scanning with Zenmap For the second activity, I used Zenmap to perform network discovery on medirozahospital.com. In scanning, I used Zenmap and selected intense scan and identified one live host:
 
 199.188.201.16
+### Harvester 
+Found 3 subdomains 
+2 Ips
+1 email
+2 hosts - FTP, Mediroza hospital.com and mail.medirozahospital.com
+
+## Summary 
+This domain has publicly discoverable infrastructure including mail/FTP related host names.
 
 ## Risk Analysis / Impact
 
@@ -89,7 +95,7 @@ Based on the information collected during the footprinting and network scanning 
 
 Footprinting and Scanning
 
-I have used Maltego to derive possible emails and results are show in the screenshot attached. [Low Risk🚦] and I have used WHOIS Find domain registration details (owner, dates, name servers)
+I have derived possible emails and results are show in the screenshot attached. [Low Risk🚦] and I have used WHOIS Find domain registration details (owner, dates, name servers)
 
 I have also used Zenmap, using intensive scan, to scan open ports and have found two, FTP port and SIP. [Medium Risk 🚦]
 
@@ -97,4 +103,4 @@ Gain Accessing
 
 I have used Hydra on Staff Login and Patient Login pages. The results are show in the screenshot attached. In staff login I found 16 passwowds [High Risk🚦] while patient login page I found none but child numbers. The screenshots are also attached.
 
-Evidences Collected Screenshots collected as evidence during the activities (stored in the screenshots in the Labs and Zenmap Folder):
+
